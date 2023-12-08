@@ -48,10 +48,10 @@ class ApiController
                 'response' => $curlResponse,
                 'logResponse' => $insertLog['response']
             ]);
-
         }
 
         curl_close($request);
+
         return json_encode([
             'success' => true,
             'response' => $curlResponse
