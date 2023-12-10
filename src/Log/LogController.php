@@ -17,6 +17,10 @@ class LogController
 
         $folder = $this->logFolder.$day.'.json';
 
+        if (!file_exists($this->logFolder)) {
+            mkdir($this->logFolder, 0777, true);
+        }
+
         try {
             fopen($folder, "w");
         } catch (\Exception $e) {
